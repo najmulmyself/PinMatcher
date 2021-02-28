@@ -31,18 +31,23 @@ let seven = num7.innerText;
 let eight = num8.innerText;
 let nine = num9.innerText;
 
-let addMultipleKeyNumber = numberKey => {
-    clickInput.value = clickInput.value + numberKey;
+let aText = clickInput.value;
+// function addMultipleKeyNumber(){
+//     console.log('Hello')
+// }
+let addMultipleKeyNumber =() => {
+    // console.log(numberKey)
+    clickInput.value = aText + num0.innerText;
+    console.log('this text',aText)
 }
-
-num0.addEventListener('click',addMultipleKeyNumber(zero));
-num1.addEventListener('click', addMultipleKeyNumber(one));
-num2.addEventListener('click', addMultipleKeyNumber(two));
-num3.addEventListener('click', addMultipleKeyNumber(three));
-num4.addEventListener('click', addMultipleKeyNumber(four));
-num5.addEventListener('click', addMultipleKeyNumber(five));
-num6.addEventListener('click', addMultipleKeyNumber(six));
-num7.addEventListener('click', addMultipleKeyNumber(seven));
-num8.addEventListener('click', addMultipleKeyNumber(eight));
-num9.addEventListener('click', addMultipleKeyNumber(nine));
+num0.addEventListener('click',addMultipleKeyNumber);
+num1.addEventListener('click', addMultipleKeyNumber);
+// num2.addEventListener('click', addMultipleKeyNumber(two));
+// num3.addEventListener('click', addMultipleKeyNumber(three));
+// num4.addEventListener('click', addMultipleKeyNumber(four));
+// num5.addEventListener('click', addMultipleKeyNumber(five));
+// num6.addEventListener('click', addMultipleKeyNumber(six));
+// num7.addEventListener('click', addMultipleKeyNumber(seven));
+// num8.addEventListener('click', addMultipleKeyNumber(eight));
+// num9.addEventListener('click', addMultipleKeyNumber(nine));
 
