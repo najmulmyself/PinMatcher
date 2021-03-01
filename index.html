@@ -20,38 +20,38 @@
                 <div class="input-section half-width">
                     <input id="clickInput" class="form-control" type="text">
                     <div class="numbers">
-                        <div class="calc-body">
+                        <div id="digits-container" class="calc-body">
                             <div class="calc-button-row">
-                              <div id="num-7" class="button">7</div>
-                              <div id="num-8" class="button">8</div>
-                              <div id="num-9" class="button">9</div>
+                              <div class="button">7</div>
+                              <div class="button">8</div>
+                              <div class="button">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div id="num-4" class="button">4</div>
-                              <div id="num-5" class="button">5</div>
-                              <div id="num-6" class="button">6</div>
+                              <div class="button">4</div>
+                              <div class="button">5</div>
+                              <div class="button">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div id="num-1" class="button">1</div>
-                              <div id="num-2" class="button">2</div>
-                              <div id="num-3" class="button">3</div>
+                              <div class="button">1</div>
+                              <div class="button">2</div>
+                              <div class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div id="num-0" onclick="addMuntipleKeyNumber(zero)" class="button">0</div>
+                                <div class="button">B</div>
+                                <div class="button">0</div>
                                 <div class="button">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <button type="submit" class="submit-btn" onclick="verifyPin()">Submit</button>
+                                <p class="action-left"><span id="try-left">3</span> try left</p>
                             </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p id="pinUnmatched" class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="pinMatched" class="notify">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
     <script src="script.js"></script>

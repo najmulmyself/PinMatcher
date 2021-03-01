@@ -52,6 +52,9 @@
 // num9.addEventListener('click', addMultipleKeyNumber(nine));
 
 // Making Code Clear with Function
+let notifyResult = document.getElementsByClassName("notify");
+notifyResult[0].style.display = "none";
+notifyResult[1].style.display = "none";
 
 function getRandomNum(){
     let randomPin = Math.random() * 10000;
@@ -67,4 +70,54 @@ function getRandomNum(){
 function generatePin(){
     let inputRandomNumber = document.getElementById('random-number');
     inputRandomNumber.value = getRandomNum();
+}
+
+//Handle Button 
+
+let digitsContainer = document.getElementById('digits-container');
+digitsContainer.addEventListener('click',function(event){
+    let digit = event.target.innerText;
+    if(isNaN(digit)){
+        if(digit === 'C'){
+            let clickInputBox = document.getElementById('clickInput');
+            clickInputBox.value = '';
+            let matched = document.getElementById('pinMatched');
+            matched.style.display='none'
+            let unMatched = document.getElementById('pinUnmatched');
+            unMatched.style.display = 'none';
+    }
+    else{
+        let clickInputBox1 = document.getElementById('clickInput').value;
+        let clickInputBox2 = document.getElementById('clickInput');
+
+        // Need To know How to handle Backspace 
+        
+        console.log(clickInputBox.length - 1)
+        clickInputBox1.value = clickInputBox.substr(0, clickInputBox.length - 1);
+    }
+}
+    else{
+        let clickInputBox = document.getElementById('clickInput');
+        clickInputBox.value = clickInputBox.value + digit;
+    }
+})
+
+function verifyPin(){
+    let genPin = document.getElementById('random-number').value;
+    let typedPin = document.getElementById('clickInput').value;
+
+    if(genPin === typedPin){
+        let matched = document.getElementById('pinMatched');
+        matched.style.display='block'
+    }
+    else{
+        let unMatched = document.getElementById('pinUnmatched');
+        unMatched.style.display = 'block';
+        let timesTry = document.getElementById('try-left');
+        timesTry.innerText = timesTry.innerText - 1;
+        if(timesTry.innerText < 0 ){
+            alert('Re generate PIn')
+            timesTry.innerText = 3;
+        }
+    }
 }
